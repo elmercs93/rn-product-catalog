@@ -32,15 +32,9 @@ export default class App extends Component {
 
 
   setOrderProductList(order,list){
-    if(order === 'mayor'){
     return  list.sort((a,b)=> {
-          return  b.cost - a.cost;
+          return  (order==='mayor')? (b.cost - a.cost) : (a.cost - b.cost);
       });
-    }else{
-      return  list.sort((a,b)=> {
-                        return  a.cost - b.cost;
-                         });
-    }
   }
  
 
